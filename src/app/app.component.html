@@ -1,0 +1,16 @@
+<h1> {{ title }}</h1>
+<div *ngFor="let user of user">
+  <h2 *NgIf="users.Age>=20">{{user.FirstName}} {{user.LastName}} {{user.Age}}</h2>
+</div>
+
+<h1>Array from parent component</h1>
+<div *ngFor="let data of ParentUser">
+  <app-user [inputData]="data"></app-user>
+</div>
+
+
+<app-user (ParentFunction)="ParentFunction($event)"></app-user>
+<br>
+
+<h1>Array from child component</h1>
+<h1 *ngFor="let ChildUser of readData">{{ChildUser.name}}</h1>
